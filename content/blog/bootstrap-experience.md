@@ -4,6 +4,7 @@ authors = ["Ethan Kupka"]
 date = 2022-12-22
 [extra]
 display_author = "Ethan Kupka"
+summary = "owo"
 +++
 Throughout my time in the 2022 year though blocks 1-4, I developed a website for the Cornell College computer science club C4. I completed this by using Html, CSS, Sass, JS, and Bootstrap. I coded the website using Visual Studio as well. I learned about new topics such as frameworks and databases. Also diving into new styling languages and developing my knowledge in previous projects. My main goals for the website were design, community building, and easy transfer/use between C4 members.
 

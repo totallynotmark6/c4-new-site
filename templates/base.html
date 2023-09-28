@@ -40,12 +40,13 @@
                         id="home-page"><b>Blog</b></a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="contact.html" class="button" id="home-page">Contact</a>
+                    <a href="{{ get_url(path='@/contact.md') }}" class="button" id="home-page">Contact</a>
                     <!--target="_blank"- to go to new page-->
                 </li>
             </ul>
         </div> <!-- end of navbar__container-->
     </nav> <!-- end of nav-->
+    {% block content_basic %} {% endblock %}
     <section class="section">
         <div class="container">
             {% block content %} {% endblock %}
@@ -70,7 +71,7 @@
                                 </li>
                                 <li class="footer__item">
                                     <!-- TODO: contact page -->
-                                    <a href="blog.html" class="footer__links" id="home-page"><b>Contact</b></a>
+                                    <a href="{{ get_url(path='@/contact.md') }}" class="footer__links" id="home-page"><b>Contact</b></a>
                                 </li>
                             </ul>
                         </div>
@@ -94,7 +95,7 @@
                             </form>
                             <span id="msg"></span>
                         </div>
-                    </div> <!-- end of col-5 -->
+                    </div> <!-- end of col-5 -->`
                 </div>
             </div> <!-- end of social__media -->
         </div>
@@ -105,7 +106,8 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script> <!-- end of BootStrap JS -->
     <!-- Personal JS -->
-    <script src="main.js"></script>
+    <script src="{{ get_url(path='js/main.js') }}"></script>
+    {% block scripts %} {% endblock %}
 </body>
 
 </html>

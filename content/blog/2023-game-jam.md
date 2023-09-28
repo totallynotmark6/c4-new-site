@@ -4,6 +4,7 @@ authors = ["C4"]
 date = 2023-04-13
 [extra]
 display_author = "C4 - Cornell Computer Science Club"
+summary = "uwu"
 +++
 C4, a student-led coding club at our university, recently hosted an exhilarating event that brought together students from various disciplines to participate in a thrilling video game coding competition. Over the span of two days, teams of enthusiastic students collaborated, coded, and brought their imaginative ideas to life. The event showcased the incredible creativity and technical skills of the participants as they worked tirelessly to develop unique and engaging video games.
 

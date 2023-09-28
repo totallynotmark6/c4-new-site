@@ -1,10 +1,76 @@
 {% extends "base.html" %}
 
-{% block content %}
-<h1 class="title">
-  {{ page.title }}
-</h1>
-<!-- <p class="subtitle"><strong>By: {{ page.extra.display_author }}</strong></p> -->
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
-{{ page.content | safe }}
-{% endblock content %}
+{% block content_basic %}
+<style>
+  .post {
+    background-color: #202020;
+    padding: 2rem;
+  }
+
+  #title {
+    margin-top: 1rem;
+  }
+
+  .crumb {
+    margin: 0 0 4rem 2rem;
+    overflow-x: hidden !important;
+  }
+
+  .about {
+    background: #202020 !important;
+    padding: 5rem 0 8rem 0;
+  }
+
+  .main span {
+    color: rgb(212, 170, 254);
+  }
+
+  .main {
+    color: #fff;
+    font-size: 1.20rem;
+    font-weight: 150;
+  }
+
+  .responsive {
+    height: 30rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    object-fit: cover;
+  }
+
+  .responsives {
+    height: 20rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    object-fit: cover;
+  }
+
+  .past {
+    color: #fff;
+  }
+
+  #big:hover,
+  #smaller:hover {
+    transform: scale(1.02);
+    transition: transform .2s;
+  }
+</style>
+<div class="post">
+  <div class="container marketing">
+    <h1 class="title">
+      {{ page.title }}
+    </h1>
+    <p class="subtitle"><strong>By: {{ page.extra.display_author }}</strong></p>
+    <p class="subtitle"><strong>{{ page.date }}</strong></p>
+    <div class="row featurette">
+      <!-- <div class="col-md-8"> -->
+        <div class="main">
+          {{ page.content | safe }}
+        </p>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+{% endblock content_basic %}

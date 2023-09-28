@@ -1,7 +1,381 @@
 {% extends "base.html" %}
 
-{% block content %}
-<h1 class="title">
-  Hello, C4!
-</h1>
+{% block content_basic %}
+<section class="intro_container" id="home">
+  <!-- intro section // style in html intro_container section-->
+  <style>
+    /* Style for welcome vid */
+    .intro_container {
+      background: #141414;
+      height: 45rem;
+      position: relative;
+      z-index: 0;
+    }
+
+    #background-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .intro_text {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .intro_text p {
+      font-size: 3rem;
+      letter-spacing: 0.5rem;
+      overflow: hidden;
+      color: #fff;
+      text-shadow: 0 0 0.02em rgb(0, 0, 0), 0 0 0.1em black;
+    }
+
+    .intro_text p span.typed-text {
+      font-weight: normal;
+    }
+
+    .intro_text p span.cursor {
+      display: inline-block;
+      margin-left: 0.1rem;
+      width: 3px;
+      animation: blink 1s infinite;
+    }
+
+    .intro_text p span.cursor.typing {
+      animation: none;
+    }
+
+    @keyframes blink {
+      0% {
+        background-color: #fff;
+        text-shadow: 0 0 0.02em rgb(0, 0, 0), 0 0 0.1em black;
+      }
+
+      49% {
+        background-color: #fff;
+        text-shadow: 0 0 0.02em rgb(0, 0, 0), 0 0 0.1em black;
+      }
+
+      50% {
+        background-color: transparent;
+      }
+
+      99% {
+        background-color: transparent;
+      }
+
+      100% {
+        background-color: #fff;
+        text-shadow: 0 0 0.02em rgb(0, 0, 0), 0 0 0.1em black;
+      }
+    }
+  </style> <!-- end of intro section style-->
+  <video id="background-video" autoplay="" loop="" muted="">
+    <source src="images/typingHome.mp4" type="video/mp4" alt="Hand Typing Video">
+  </video>
+  <div class="intro_text">
+    <p>&gt;<span class="typed-text">Welcome!</span><span class="cursor">&nbsp;</span></p>
+  </div>
+</section>
+<!-- end of intro_container-->
+<section class="about">
+  <!-- about section // style in html about section-->
+  <style>
+    .text-muted {
+      color: var(--bs-link-hover-color) !important;
+    }
+
+    .about {
+      background: #141414 !important;
+      padding: 5rem 0 8rem 0;
+    }
+
+    .lead span {
+      color: #fff;
+    }
+
+    .responsive {
+      height: 30rem;
+      width: 100%;
+      border-radius: 1.5rem;
+      padding: 1rem;
+      object-fit: cover;
+    }
+  </style> <!-- end of about style-->
+  <div class="container marketing">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Who are we?
+          <span class="text-muted"><br>A Computer Science Club</span>
+        </h2>
+        <br>
+        <p class="lead">
+          We are the Cornell College computer science club. <span> We strive to develop our skills and create a strong
+            friendly
+            environment.</span> We host fun events like a annual hackathon, server-tour, and movie nights! We want to
+          build a <span>close community</span> to
+          hone our computer science skills where you can present your latest experiences and get healthy feed back
+          from your peers!
+        </p>
+        <br>
+      </div> <!-- col-md-7 -->
+      <div class="col-md-5">
+        <img src="images/background.png" alt="Group of People" class="responsive">
+      </div>
+    </div> <!-- row featurette -->
+  </div> <!-- container marketing -->
+  <div class="skew-cc"></div>
+</section>
+<!-- end of about-->
+<section class="additional_info">
+  <!-- additional_info section // style in html additional_info section-->
+  <style>
+    /* Goals and Meeting ------------------------------------------------------------------- */
+    .accordion {
+      /*--bs-accordion-btn-active-icon:red;*/
+      --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(149, 142, 153, 0.25) !important;
+      --bs-accordion-active-color: #fff;
+      --bs-accordion-active-bg: #888889 !important;
+      --bs-accordion-bg: #ebe6e6;
+      --bs-accordion-border-color: #141414;
+    }
+
+    .additional_info {
+      background: linear-gradient(#6441A5 10%, #202020 90%);
+      padding: 5rem 0 8rem 0;
+    }
+
+    #meeting,
+    .p {
+      background-color: #141414;
+      color: #ebe6e6;
+      font-size: 1.15rem;
+    }
+
+    #about {
+      color: #a861ff;
+      font-size: 1.10rem;
+      font-style: italic;
+    }
+
+    #goals,
+    .h2 {
+      background-color: #141414;
+      color: #ebe6e6;
+    }
+
+    .btn {
+      align-self: center;
+    }
+  </style> <!-- end of additional_info style-->
+  <div class="container marketing">
+    <!-- <hr class="top_divider" /> -->
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6 p-3">
+        <!-- First Card -->
+        <div class="h-100 p-5 rounded-3" id="meeting">
+          <h2 class="meet_h2">When Do We Meet?</h2>
+          <br>
+          <p><span id="about">When?</span> 1st Wednesday of every block</p>
+          <p><span id="about">Where?</span> 218 West Science Hall</p>
+          <p><span id="about">Time?</span> 3:30pm - 4:30pm</p>
+          <br>
+          <a class="btn btn-lg" href="{{ get_url(path='@/contact.md') }}">Get in the loop</a>
+        </div>
+      </div> <!-- end of col-md-6 p-3 -->
+      <br>
+      <div class="col-md-6 p-3">
+        <!-- Second Card -->
+        <div class="h-100 p-5 rounded-3" id="goals">
+          <div class="accordion" id="accordionExample">
+            <h2>Goals</h2>
+            <br>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Career
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Our number one goal is to enhance your <code>.career</code>
+                    opportunities.
+                    With our group projects and meetings going over job prep,
+                    this is a good place to develop new skills to add to your CS resume.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Community
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">We are changing C4 to host a mindset of having a close
+                    <code>.community</code> of the computer science students at Cornell. We hope to develop lasting
+                    friendships and contacts for down the road.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Fun
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">We want you to have
+                    <code>.fun</code>! Computer Science has a poor stereo type of not being exciting. We are here to
+                    change that view; to show the joys of computer science though our events and projects!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end of col-md-6 p-3 -->
+    </div> <!-- row align-items-md-stretch -->
+  </div> <!-- end of container marketing -->
+</section>
+<!-- end of additional_info -->
+<section class="slide_show">
+  <!-- slide_show section // style in html slide_show section-->
+  <style>
+    .slide_show {
+      background: var(--clr-bg);
+      padding-bottom: 4rem;
+    }
+
+    /* Since positioning the image, we need to help out the caption */
+    .carousel-caption {
+      bottom: 8rem;
+      z-index: 10;
+    }
+
+    #slide_text h1,
+    #slide_text p {
+      text-shadow: 1px 1px 1px #000000, 0 0 1em rgb(0, 0, 0), 0 0 0.9em rgb(155, 48, 255);
+    }
+
+    /* Declare heights because of positioning of img element */
+    .carousel-item {
+      height: 32rem;
+    }
+
+    #slide {
+      width: 100%;
+      object-fit: fill;
+      background-size: 100%;
+    }
+
+    /* Prob with responsive */
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    /* @media (max-width: 768px) {
+      .carousel-item {
+        height: 22rem;
+      }/* Prob with responsive 
+    }*/
+  </style> <!-- end of slide_show style-->
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div> <!-- end of carousel-indicators / html logic -->
+    <div class="carousel-inner">
+      <div class="carousel-item carousel-item-next carousel-item-start">
+        <!-- first card -->
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#777"></rect>
+          <image href="images/sleek.jpg" id="slide" alt="Artsy Laptop Open"></image>  <!-- first card img-->
+        </svg>
+
+        <div class="container" id="slide_text">
+          <div class="carousel-caption text-start">
+            <h1>What do you want?</h1>
+            <p>
+              C4 is changing and we want to hear from you! Got any ideas?
+            </p>
+            <p><a class="btn btn-lg" href="{{ get_url(path='@/contact.md') }}">Suggestions?</a>
+            </p>
+          </div>
+        </div> <!-- end of container -->
+      </div> <!-- end of carousel-item active / first card -->
+      <div class="carousel-item">
+        <!-- second card -->
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#777"></rect>
+          <image href="images/group.jpg" id="slide" alt="Group of People"></image>  <!-- second card img-->
+          <!-- <image href="images/fair.jpg" height="100%" width="100%" object-fit="cover"/> -->
+        </svg>
+
+        <div class="container" id="slide_text">
+          <div class="carousel-caption">
+            <h1>First meeting</h1>
+            <p>
+              C4 had the chance to meet its new 2022 members!
+            </p>
+            <p>
+            </p><p><a class="btn btn-lg" href="{{ get_url(path='@/blog/_index.md') }}">Read More</a></p>
+          </div>
+        </div> <!-- end of container -->
+      </div> <!-- end of carousel-item active / second card -->
+      <div class="carousel-item active carousel-item-start">
+        <!-- third card -->
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#777"></rect> 
+          <image href="images/motherboard.jpg" id="slide" alt="Mother Board Tech"></image>  <!-- third card img-->
+        </svg>
+
+        <div class="container" id="slide_text">
+          <div class="carousel-caption text-end">
+            <h1>Up and coming event!</h1>
+            <p>
+              We plan to host a Hackathon during the second semester of 2023 year!
+            </p>
+            <p>
+              <a class="btn btn-lg" href="{{ get_url(path='@/blog/_index.md') }}">Read More</a>
+            </p>
+          </div>
+        </div> <!-- end of container -->
+      </div> <!-- end of carousel-item active / third card -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> <!-- end of col-md-6 p-3 -->
+</section>
+<!-- end of slide_show -->
 {% endblock content %}
+
+{% block scripts %}
+<!-- Home Page JS -->
+<script src="{{ get_url(path='js/home.js') }}"></script>
+{% endblock scripts %}
