@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://totallynotmark6.github.io/c4-new-site/sitemap.xml
