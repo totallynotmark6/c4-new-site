@@ -1,6 +1,6 @@
 # The URL the site will be built for
 # base_url = "https://cornellcollegecomputingclub.github.io"
-base_url = "https://totallynotmark6.github.io/c4-new-website"
+base_url = "https://totallynotmark6.github.io/c4-new-site"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
